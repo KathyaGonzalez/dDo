@@ -14,6 +14,7 @@
     position: absolute;
     right: 0;
     top:0;
+    border: none;
 }
 
 .delete:hover {
@@ -22,12 +23,15 @@
 
 .hp {
     border: rgb(186, 80, 80) solid 2px;
+    background: rgb(186, 80, 80, .5);
 }
 
 .mp {
     border: rgb(211, 143, 58) solid 2px;
+    background: rgb(211, 143, 58,.5);
 }
 
 .lp {
     border: rgb(126, 232, 90) solid 2px;
+    background: rgb(126, 232, 90, .4);
 }

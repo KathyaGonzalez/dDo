@@ -20,23 +20,29 @@ export function NewTask () {
                 setNewTask('')
                 console.log(task)
             }else{
-                alert('La tarea ya existe')
+                alert('Task already exist')
             }
         }else{
-            alert('La tarea no puede ser vacía')
+            alert('Task cannot be empty')
         }
     }
     return (
         <form className='newTask' onSubmit={handleSubmit}>
-            <label htmlFor={newTaskId}> New task</label>
-            <input 
-            id={newTaskId} placeholder='Exaple: Refactoring code' onChange={(event) => {setNewTask(event.target.value)}} value={newTask}></input>
-            <label>Priority</label>
-            <select id='priority'>
-                <option value='HP'>High priority</option>
-                <option value='MP'>Medium priority</option>
-                <option value='LP'>Low priority</option>
-            </select>
+            <article className='campos'>
+                <section className='campo'>
+                    <label htmlFor={newTaskId}> New task</label>
+                    <input 
+                    id={newTaskId} placeholder='Example: Refactoring code' onChange={(event) => {setNewTask(event.target.value)}} value={newTask}></input>
+                </section>
+                <section className='campo'>    
+                    <label>Priority</label>
+                    <select id='priority'>
+                        <option value='HP'>High priority</option>
+                        <option value='MP'>Medium priority</option>
+                        <option value='LP'>Low priority</option>
+                    </select>
+                </section>
+            </article>
             <button className='add' type='submit'>
                 Add new task
             </button>

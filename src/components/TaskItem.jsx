@@ -11,13 +11,13 @@ export function TaskItem ({task, removeFromBoard}) {
             <strong>{task.description}</strong>
             <button className='delete' onClick={removeFromBoard}>x</button>
             <p>
-                {'Agregado el '}
+                {'Added on '}
                 {task.dateTime.getDate()}
                 {'/'}
                 {task.dateTime.getMonth()+1}
                 {'/'}
                 {task.dateTime.getFullYear()}
-                {' a las '}
+                {' at '}
                 {task.dateTime.getHours()}
                 {':'}
                 {task.dateTime.getMinutes()}

@@ -2,8 +2,6 @@ import '../styles/Header.css'
 
 export function Header () {
     return (
-        <>
-        <h1>Daily tasks</h1>
-        </>
+        <h1 className='title'>Daily tasks</h1>
     )
 }

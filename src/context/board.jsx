@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react";
 import { boardReducer, initialState } from "../reducers/board";
+import '../styles/Board.css'
 
 export const BoardContext = createContext()
 
