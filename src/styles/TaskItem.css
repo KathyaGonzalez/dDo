@@ -1,0 +1,33 @@
+.taskItem {
+    border-radius: 15px;
+    list-style: none;
+    padding: 12px;
+    backdrop-filter: blur(8px);
+    opacity: .95;
+    word-wrap: break-word;
+}
+
+.delete {
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all .3s ease;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+
+.delete:hover {
+    scale: 1.1;
+}
+
+.hp {
+    border: rgb(186, 80, 80) solid 2px;
+}
+
+.mp {
+    border: rgb(211, 143, 58) solid 2px;
+}
+
+.lp {
+    border: rgb(126, 232, 90) solid 2px;
+}

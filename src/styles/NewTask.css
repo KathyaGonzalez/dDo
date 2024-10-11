@@ -1,0 +1,15 @@
+.newTask {
+    display: grid;
+    gap: 10px;
+}
+
+.add {
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add:hover{
+    background-color: rgb(39, 116, 56);
+    scale: 1.06;
+    transition: all 1s ease;
+}
