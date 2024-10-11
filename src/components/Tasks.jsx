@@ -2,12 +2,12 @@ import { useBoard } from "../hooks/useBoard"
 import { TaskItem } from "./TaskItem"
 import '../styles/Tasks.css'
 
-export function Tasks() {
-    const { board, removeFromBoard} = useBoard()
+export function Tasks({tasks}) {
+    const { removeFromBoard} = useBoard()
     return (
      <ul className="board">
         {
-            board.map(task =>               
+            tasks.map(task =>               
             {
                 return(
                     <TaskItem
