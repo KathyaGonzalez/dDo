@@ -11,14 +11,17 @@ export function NewTask () {
         if(newTask!== ''){
             const check = board.filter(task => task.description === newTask)
             if(check.length===0){
+                const now = new Date()
+                const dateTime= now.getDate() +'/'+ now.getMonth()+1 + '/' 
+                + now.getFullYear() + ' at '+ now.getHours() + ':'
+                + now.getMinutes()
                 const task = {
                     'description': newTask,
-                    'dateTime': new Date(),
+                    'dateTime': dateTime,
                     'priority': document.getElementById('priority').value
                 }
                 addToBoard(task)
                 setNewTask('')
-                console.log(task)
             }else{
                 alert('Task already exist')
             }
