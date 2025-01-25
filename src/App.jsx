@@ -11,12 +11,12 @@ function App() {
   const { filterTasks } = useFilters()
   const filteredTasks = filterTasks(board)
   return (
-    <>
+    <div className='container'>
       <Header/>
       <NewTask/>
       <Filters/>
       <Tasks tasks={filteredTasks}/>
-    </>
+    </div>
   )
 }
 

@@ -1,13 +1,25 @@
 import { useId, useState } from 'react'
 import '../styles/NewTask.css'
 import { useBoard } from '../hooks/useBoard'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText} from '@mui/material';
 
 export function NewTask () {
     const newTaskId = useId()
     const [newTask, setNewTask ]= useState('')
     const {addToBoard, board} = useBoard()
+    const [problem, setProblem] = useState(false)
+    const [msg, setMsg] = useState("");
+    const [open, setOpen] = useState(false);
+  
+    const handleClose = () => {
+      setOpen(false);
+      setProblem(false);
+      setMsg("");
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault()
+        setOpen(true);
         if(newTask!== ''){
             const check = board.filter(task => task.description === newTask)
             if(check.length===0){
@@ -23,10 +35,12 @@ export function NewTask () {
                 addToBoard(task)
                 setNewTask('')
             }else{
-                alert('Task already exist')
+                setProblem(true);
+                setMsg('Task already exist');
             }
         }else{
-            alert('Task cannot be empty')
+            setProblem(true);
+            setMsg('Task cannot be empty');
         }
     }
     return (
@@ -49,6 +63,25 @@ export function NewTask () {
             <button className='add' type='submit'>
                 Add new task
             </button>
+            {
+                problem && 
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    aria-describedby="alert-dialog-description"
+                >
+                    <DialogContent >
+                    <DialogContentText id="alert-dialog-description">
+                        {msg}
+                    </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                    <Button onClick={handleClose} autoFocus>
+                        Agree
+                    </Button>
+                    </DialogActions>
+                </Dialog>
+            }
         </form>
     )
 }
